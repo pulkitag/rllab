@@ -1,4 +1,4 @@
-from path import Path
+#from path import Path
 import sys
 import pickle as pickle
 import random
@@ -9,7 +9,7 @@ import operator
 from functools import reduce
 
 sys.setrecursionlimit(50000)
-
+CACHE_PATH='/data0/pulkitag/cachedir/rllab'
 
 def extract(x, *keys):
     if isinstance(x, (dict, lazydict)):
@@ -48,8 +48,9 @@ def cached_function(inputs, outputs):
         else:
             hash_content = theano.pp(outputs)
     cache_key = hex(hash(hash_content) & (2 ** 64 - 1))[:-1]
-    cache_dir = Path('~/.hierctrl_cache')
-    cache_dir = cache_dir.expanduser()
+    #cache_dir = Path('~/.hierctrl_cache')
+    cache_dir = CACHE_PATH
+    #cache_dir = cache_dir.expanduser()
     cache_dir.mkdir_p()
     cache_file = cache_dir / ('%s.pkl' % cache_key)
     if cache_file.exists():

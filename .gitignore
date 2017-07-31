@@ -1,3 +1,5 @@
+*egg-info
+dist/*
 data
 *.pyc
 *-checkpoint.ipynb
