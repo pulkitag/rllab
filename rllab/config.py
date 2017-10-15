@@ -7,6 +7,14 @@ LOG_DIR = PROJECT_PATH + "/data"
 
 USE_TF = False
 
+TF_GPU_ALLOW_GROWTH = True
+
+TF_GPU_MEM_FRAC = 0.3
+
+TF_LOG_DEVICE_PLACEMENT = True
+
+TF_USE_GPU = True
+
 DOCKER_IMAGE = "DOCKER_IMAGE"
 
 DOCKERFILE_PATH = "/path/to/Dockerfile"
